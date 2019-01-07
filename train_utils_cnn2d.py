@@ -2,7 +2,7 @@
 Defines a functions for training a NN.
 """
 
-from data_generator import AudioGenerator
+from data_generator_cnn2d import AudioGeneratorCNN2d
 import _pickle as pickle
 
 from keras import backend as K
@@ -29,7 +29,7 @@ def add_ctc_loss(input_to_softmax):
         outputs=loss_out)
     return model
 
-def train_model(input_to_softmax, 
+def train_model_cnn2d(input_to_softmax, 
                 pickle_path,
                 save_model_path,
                 train_json='train_corpus.json',
@@ -44,7 +44,7 @@ def train_model(input_to_softmax,
                 max_duration=10.0):
     
     # create a class instance for obtaining batches of data
-    audio_gen = AudioGenerator(minibatch_size=minibatch_size, 
+    audio_gen = AudioGeneratorCNN2d(minibatch_size=minibatch_size, 
         spectrogram=spectrogram, mfcc_dim=mfcc_dim, max_duration=max_duration,
         sort_by_duration=sort_by_duration)
     # add the training data to the generator
