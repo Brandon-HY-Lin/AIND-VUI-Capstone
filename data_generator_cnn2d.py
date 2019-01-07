@@ -17,7 +17,7 @@ from utils import conv_output_length
 
 RNG_SEED = 123
 
-class AudioGenerator():
+class AudioGeneratorCNN2d():
     def __init__(self, step=10, window=20, max_freq=8000, mfcc_dim=13,
         minibatch_size=20, desc_file=None, spectrogram=True, max_duration=10.0, 
         sort_by_duration=False):
@@ -80,7 +80,7 @@ class AudioGenerator():
         
         # initialize the arrays
         X_data = np.zeros([self.minibatch_size, max_length, 
-            self.feat_dim*self.spectrogram + self.mfcc_dim*(not self.spectrogram)])
+            self.feat_dim*self.spectrogram + self.mfcc_dim*(not self.spectrogram), 1])
         labels = np.ones([self.minibatch_size, max_string_length]) * 28
         input_length = np.zeros([self.minibatch_size, 1])
         label_length = np.zeros([self.minibatch_size, 1])
@@ -89,7 +89,7 @@ class AudioGenerator():
             # calculate X_data & input_length
             feat = features[i]
             input_length[i] = feat.shape[0]
-            X_data[i, :feat.shape[0], :] = feat
+            X_data[i, :feat.shape[0], :, 0] = feat
 
             # calculate labels & label_length
             label = np.array(text_to_int_sequence(texts[cur_index+i])) 
