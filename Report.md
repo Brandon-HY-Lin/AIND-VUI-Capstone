@@ -4,6 +4,8 @@
 
 [deep_speech_2]: https://arxiv.org/abs/1512.02595 "Deep Speech 2 paper"
 
+# Project: DNN Speech Recognition
+
 # Abstract
 This work adopts methods in [deep sppech 2][deep_speech_2]. The architecture combines CNN-2D, Bidirectional RNN, and Dropout. The dataset is  [LibriSpeech ASR Corpus](http://www.openslr.org/12/) and achieve a validation loss of 93.7.
 
