@@ -35,6 +35,7 @@ The flow chart of [deep speech 2][deep_speech_2] is shown below. The input is sp
 The architecture is (1-layer Conv2D + 2-layer Bidirectional GRU + TimeDistributed Dense). To reducing overfitting, batch-normalization and dropout layers are added between each layer. Futhurmore, the dropout feature in GRU cell is also enabled.
 
 * Steps:
+    * Preprocessing: Convert the raw audio into spectrogram with size of 161.
     * Input: The spectrogram with shape (None, TimeSeqLength, 161, 1).
     * Conv2D: Served as encoder to extract features.
             Stride=2, Out-channel=8, padding=same
