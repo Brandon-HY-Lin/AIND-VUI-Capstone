@@ -61,7 +61,7 @@ The architecture is (1-layer Conv2D + 2-layer Bidirectional GRU + TimeDistribute
 
 # Results
 
-The model with greates result is _model_cnn2d_dropout_, and its validation loss is 93.7 which is better than other combinations of CNN, RNN, and FC. The detail results are shown below.
+The model with greatest result is _model_cnn2d_dropout_, and its validation loss is 93.7 which is better than other combinations of CNN, RNN, and FC. The detail results are shown below.
 
 
 ![Results][plot_of_results]
