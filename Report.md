@@ -40,6 +40,7 @@ The architecture is (1-layer Conv2D + 2-layer Bidirectional GRU + TimeDistribute
 * Steps:
     * Preprocessing: Convert the raw audio into spectrogram with size of 161.
     * Input: The spectrogram with shape (None, TimeSeqLength, 161, 1).
+    	* Note that the input shape of CNN-2D is (TimeSeqLength, 161, 1) which maps to (rows, cols, channels).
     * Conv2D: Served as encoder to extract features.
             Stride=2, Out-channel=8, padding=same
             output shape = (None, TimeSeqLength/2, 81, 8)
