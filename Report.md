@@ -4,6 +4,9 @@
 
 [deep_speech_2]: https://arxiv.org/abs/1512.02595 "Deep Speech 2 paper"
 
+[plot_of_results]: https://github.com/Brandon-HY-Lin/AIND-VUI-Capstone/blob/master/images/losses.png?raw=true "Plot of results"
+
+
 # Project: DNN Speech Recognition
 
 # Abstract
@@ -58,7 +61,10 @@ The architecture is (1-layer Conv2D + 2-layer Bidirectional GRU + TimeDistribute
 
 # Results
 
-The model name of __deep speech 2__ is _model_cnn2d_dropout_, and the validation loss is 93.7 which is better than other combinations of CNN, RNN, and FC. The detail results are shown below.
+The model with greates result is _model_cnn2d_dropout_, and its validation loss is 93.7 which is better than other combinations of CNN, RNN, and FC. The detail results are shown below.
+
+
+![Results][plot_of_results]
 
 
 | Model               	| Architecture                                	| Training loss @ Epoch-20 	| Validation Loss @ Epoch-20 	| Lowest Validation Loss 	| Epoch of lowest Valid Loss 	|
